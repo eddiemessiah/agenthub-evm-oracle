@@ -1,15 +1,11 @@
 {
   "name": "evm-oracle",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "x402 Agentic EVM Oracle",
+  "engines": {
+    "node": "20.x"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@google/genai": "^1.48.0"
   }
 }
-

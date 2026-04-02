@@ -72,7 +72,7 @@ module.exports = async (req, res) => {
         let auditResult = result.response.text();
         
         // Strip markdown blocks
-        auditResult = auditResult.replace(/```json/g, '').replace(/```/g, '').trim();
+        auditResult = auditResult.replace(/\`\`\`json/g, '').replace(/\`\`\`/g, '').trim();
 
         const finalPayload = {
             contractAddress,
