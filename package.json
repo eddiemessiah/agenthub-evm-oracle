@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "@google/genai": "^1.48.0",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
   }
 }

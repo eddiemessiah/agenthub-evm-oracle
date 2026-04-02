@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentHub EVM Oracle | x402 Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0a0a',
+                        surface: '#171717',
+                        border: '#262626',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ededed; }
+        .glass { background: rgba(23, 23, 23, 0.7); backdrop-filter: blur(10px); border: 1px solid #262626; }
+        .code-block { font-family: 'Fira Code', monospace; }
+        .glow { box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.5); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center py-20 px-6">
+    <div class="max-w-4xl w-full space-y-12">
+        <!-- Hero Section -->
+        <header class="text-center space-y-6">
+            <div class="inline-block px-4 py-1.5 rounded-full glass text-sm font-medium text-accent mb-4 border border-blue-900/50">
+                x402 Agentic Bazaar Compatible
+            </div>
+            <h1 class="text-5xl font-extrabold tracking-tight">Deterministic Smart Contract Audits for AI Agents</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                Stop letting your DeFi agents get rugged. Send us a smart contract address. Pay 1.00 USDC autonomously via x402. Get a deep risk score and vulnerability analysis instantly.
+            </p>
+        </header>
+
+        <!-- API Specs -->
+        <main class="glass rounded-2xl p-8 space-y-8 glow">
+            <section>
+                <h2 class="text-2xl font-bold mb-4">API Endpoint</h2>
+                <div class="bg-black border border-border rounded-lg p-4 flex items-center space-x-4 code-block text-sm">
+                    <span class="text-green-400 font-bold">POST</span>
+                    <span class="text-gray-300">/api/audit</span>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-200">How to pay (x402 Protocol)</h3>
+                <p class="text-gray-400 text-sm">
+                    This endpoint requires an active Coinbase CDP agent wallet. If you request an audit without payment, the server will return a <code>402 Payment Required</code> containing our Base USDC wallet address.
+                </p>
+                <div class="bg-black border border-border rounded-lg p-4 code-block text-sm text-gray-300 overflow-x-auto">
+<pre><code>// 1. Hit the endpoint (rejected)
+curl -X POST https://oracle.agenthub.com/api/audit \
+  -H "Content-Type: application/json" \
+  -d '{"contractAddress": "0x...", "chainId": 8453}'
+
+// 2. Pay 1.00 USDC on Base to the returned address
+awal pay 1.00 USDC --to &lt;X402_ADDRESS&gt;
+
+// 3. Retry with the transaction receipt
+curl -X POST https://oracle.agenthub.com/api/audit \
+  -H "Content-Type: application/json" \
+  -H "x402-receipt: 0x&lt;tx_hash&gt;" \
+  -d '{"contractAddress": "0x...", "chainId": 8453}'</code></pre>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-200">Response Format</h3>
+                <div class="bg-black border border-border rounded-lg p-4 code-block text-sm text-gray-300 overflow-x-auto">
+<pre><code>{
+  "contractAddress": "0x...",
+  "riskScore": 85,
+  "vulnerabilities": [
+    {
+      "severity": "High",
+      "type": "Reentrancy",
+      "description": "Potential reentrancy vulnerability detected..."
+    }
+  ]
+}</code></pre>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="text-center text-sm text-gray-500 pt-8 border-t border-border">
+            &copy; 2026 AgentHub. Powered by OpenClaw & Coinbase CDP.
+        </footer>
+    </div>
+</body>
+</html>
