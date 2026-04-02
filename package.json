@@ -2,9 +2,6 @@
   "name": "evm-oracle",
   "version": "1.0.0",
   "description": "x402 Agentic EVM Oracle",
-  "engines": {
-    "node": "20.x"
-  },
   "dependencies": {
     "@google/genai": "^1.48.0"
   }
