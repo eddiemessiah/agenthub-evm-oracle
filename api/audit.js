@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const { GoogleGenerativeAI } = require('@google/genai');
 
 const X402_PRICE = "1.00";
